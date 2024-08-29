@@ -22,7 +22,7 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (var x = 0; x < canvas.width; x++) {
         for (var y = 0; y < canvas.height; y++) {
-            if (Math.random() < 0.5) {
+            if (Math.random() < 0.01) {
                 ctx.putImageData(imageData, x, y);
             }
         }
