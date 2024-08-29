@@ -30,7 +30,7 @@ function draw(){
 
     for(let x=0; x<canvas.width; x++){
         for (let y=0; y<canvas.height; y++){
-            if (Math.random()<0.01){
+            if (Math.random()<0.5){
                 ctx.putImageData(imageData, x, y);
             }
         }
