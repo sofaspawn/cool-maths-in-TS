@@ -16,12 +16,20 @@ data[2] = 255;
 data[3] = 255;
 
 function handleKeyPress(event: KeyboardEvent){
-    if (event.key=='q'){
-        doIStop = true;
+    if (event.key==' '){
+        doIStop = !doIStop;
     }
 }
 
+function resize(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
 function draw(){
+
+    //resize();
+
     if(!ctx){
         throw new Error("ctx error");
     }
@@ -30,7 +38,7 @@ function draw(){
 
     for(let x=0; x<canvas.width; x++){
         for (let y=0; y<canvas.height; y++){
-            if (Math.random()<0.01){
+            if (Math.random()<0.1){
                 ctx.putImageData(imageData, x, y);
             }
         }
@@ -41,6 +49,7 @@ function draw(){
     }
 }
 
+//resize()
 window.addEventListener("keypress", handleKeyPress);
 draw();
 
